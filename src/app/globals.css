@@ -1,0 +1,42 @@
+@import "tailwindcss";
+/* ///4/// */
+@plugin './hero.ts';
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+:root {
+	--background: #b8e5ec;
+	--foreground: #251303;
+	--card-background: #e9e6e6;
+
+	--card-background_1: #c6b098;
+	--card-background_2: #a3a9a3;
+	--card-background_3: #c7996f;
+	--card-background_4: #af8376;
+	--card-background_5: #a4af76;
+	--card-background_6: #90b396;
+	--card-background_7: #d8a697;
+	--card-background_8: #86abd2;
+
+}
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #1b1a19;
+		--foreground: #ededed;
+		--card-background: #1b1322;
+	}
+}
+
+body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+}
